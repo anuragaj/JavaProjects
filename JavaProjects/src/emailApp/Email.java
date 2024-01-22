@@ -37,7 +37,7 @@ public class Email {
 			int randomNumber = (int)(Math.random() * chars.length());
 			randomPassword[i] = chars.charAt(randomNumber);
 		}
-		return randomPassword.toString();
+		return String.valueOf(randomPassword);
 	}
 
 }
