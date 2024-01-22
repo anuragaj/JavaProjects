@@ -7,5 +7,6 @@ public class Email {
 	int mailboxCapacity;
 	private String alternamteEmail;
 	private String password;
+	private String test;
 
 }
