@@ -13,7 +13,9 @@ public class Email {
 	public Email(String firstName, String lastName) {
 		this.firstName = firstName;
 		this.lastName = lastName;
-		setDepartment();
+		this.department = setDepartment();
+		this.password = generateRandomPassword(8);
+		System.out.println(this.firstName + " " + this.lastName + " " + this.department + " " + this.password);
 	}
 	
 	private String setDepartment() {
@@ -26,6 +28,16 @@ public class Email {
 		case 3: return "Accounting";
 		default: return "";
 		}
+	}
+	
+	private String generateRandomPassword(int length) {
+		String chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$";
+		char[] randomPassword = new char[length];
+		for(int i = 0; i < length; i++) {
+			int randomNumber = (int)(Math.random() * chars.length());
+			randomPassword[i] = chars.charAt(randomNumber);
+		}
+		return randomPassword.toString();
 	}
 
 }
